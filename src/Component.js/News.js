@@ -93,7 +93,7 @@ export default class News extends Component {
   render() {
     return (
     <>
-      <h2 className="text-center my-3 " >NewsAdda - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h2>
+      <h2 className="text-center my-5 " >NewsAdda - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h2>
      {this.state.loading && <Spinner/>}
      <InfiniteScroll
             dataLength={this.state.articles.length}
@@ -105,7 +105,7 @@ export default class News extends Component {
          <div className="container  ">
              <div className="row ">
               {this.state.articles.map((element)=>{
-              return <div className="col-md-4  mb-3" key={element.url}>
+              return <div className="col-md-4" key={element.url}>
                       <NewsItem title={element.title} description={element.description} imgUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                     </div>
 
