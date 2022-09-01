@@ -5,7 +5,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-lg bg-dark  navbar-dark ">
+        <nav className={`navbar fixed-top navbar-expand-lg bg-${this.props.mode==='dark'?'dark':'light'}  navbar-${this.props.mode==='dark'?'dark':'light'}`}>
           <div className="container-fluid ">
           <img src={giphy} alt=" Logo" style={{width:40, }} className="rounded-pill mx-2"/> 
             <Link className="navbar-brand " to="/">NewsAdda</Link>
@@ -36,7 +36,7 @@ export default class Navbar extends Component {
               {/* darkMode */}
               <div className={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'} `}>
                 <input className="form-check-input " onClick={this.props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                <label className="form-check-label text-light " htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+                <label className={`form-check-label text-${this.props.mode==='light'?'dark':'light'} `} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
              </div>
              {/* darkMode */}
             </div>

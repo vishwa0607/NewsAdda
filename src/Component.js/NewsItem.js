@@ -6,8 +6,8 @@ export default class NewsItem extends Component {
   ) {
     let {title, description,imgUrl, newsUrl,date,author, source}= this.props
     return (
-      <div className='my-3'>
-              <div className="card bg-dark text-light">
+      <div >
+              <div className={`card bg-${this.props.mode==='dark'?'dark':'light'} text-${this.props.mode==='light'?'dark':'light'}`}>
               <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'88%',zIndex:'1'}}>
               {source}
               </span>
