@@ -28,7 +28,7 @@ export default class NewsAdda extends Component {
     else
     {
       this.setState({mode:'light'})
-  document.body.style.backgroundColor='white'
+  document.body.style.backgroundColor='#FFFFFF'
    
     }
   }

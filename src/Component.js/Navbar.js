@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import giphy from './giphy.gif'
-export default class Navbar extends Component {
-  render() {
+const Navbar =(props)=> {
+  
     return (
       <div>
-        <nav className={`navbar fixed-top navbar-expand-lg bg-${this.props.mode==='dark'?'dark':'light'}  navbar-${this.props.mode==='dark'?'dark':'light'}`}>
+        <nav className={`navbar fixed-top navbar-expand-lg bg-${props.mode==='dark'?'dark':'light'}  navbar-${props.mode==='dark'?'dark':'light'}`}>
           <div className="container-fluid ">
           <img src={giphy} alt=" Logo" style={{width:40, }} className="rounded-pill mx-2"/> 
             <Link className="navbar-brand " to="/">NewsAdda</Link>
@@ -34,9 +34,9 @@ export default class Navbar extends Component {
                 
               </ul>
               {/* darkMode */}
-              <div className={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'} `}>
-                <input className="form-check-input " onClick={this.props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                <label className={`form-check-label text-${this.props.mode==='light'?'dark':'light'} `} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+              <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'} `}>
+                <input className="form-check-input " onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                <label className={`form-check-label text-${props.mode==='light'?'dark':'light'} `} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
              </div>
              {/* darkMode */}
             </div>
@@ -44,5 +44,6 @@ export default class Navbar extends Component {
         </nav>
       </div>
     )
-  }
+  
 }
+export default Navbar
